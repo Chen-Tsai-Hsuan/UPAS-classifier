@@ -1,7 +1,10 @@
+app = Flask(__name__)
+@app.route('/')
+def home():
+    return '✅ UPAS 分類 API 已啟動，請使用 POST /classify 上傳 Excel。'
+
 from flask import Flask, request, jsonify
 import pandas as pd
-
-app = Flask(__name__)
 
 def classify_os(value):
     if "Windows" in str(value):
